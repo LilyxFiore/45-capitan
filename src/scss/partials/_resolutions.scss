@@ -1,12 +1,8 @@
 $screen-small: 600px;
 $screen-large: 768px;
 
-[class*="col-"]{
-  width: 100%;
+[class*="col-"] {
   float: left;
-}
-
-.col-s12{
   width: 100%;
 }
 
@@ -15,7 +11,22 @@ $screen-large: 768px;
   @return ($col-number/$col-total)*100%;
 }
 
-@media only screen and (min-width: $screen-large + 1){
+
+@media screen and (min-width: $screen-small) and (max-width: $screen-large){
+  .col-m-3{
+    width: col-width(3,12);
+  }
+
+  .col-m-6{
+    width: col-width(6,12);
+  }
+
+  .col-m-9{
+    width: col-width(9,12);
+  }
+}
+
+@media screen and (min-width: $screen-large + 1){
   .col-3{
     width: col-width(3,12);
   }
@@ -24,23 +35,3 @@ $screen-large: 768px;
     width: col-width(6,12);
   }
 }
-
-@media only screen and (min-width: $screen-small + 1) and (min-width: $screen-large){
-  .col-m3{
-    width: col-width(3,12);
-  }
-
-  .col-m6{
-    width: col-width(6,12);
-  }
-
-  .col-m9{
-    width: col-width(9,12);
-  }
-}
-
-
-
-
-
-
