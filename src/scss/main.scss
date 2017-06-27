@@ -1,0 +1,44 @@
+// partials
+@import "partials/color";
+@import "partials/fonts";
+@import "partials/resolutions";
+
+* {
+  font-family: $base-font-family;
+  margin: auto;
+}
+
+.title-capitan{
+  color: $color-white;
+  background-color: $color-accent;
+  padding: 20px;
+}
+
+.container{
+  display: table;
+  width: 98%;
+}
+
+.nav{
+  ul{
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  li{
+    background-color: $color-base;
+    color: $color-white;
+    list-style: none;
+  }
+}
+
+
+/*
+
+body {
+ // float: left;
+ // width: 250px;
+  @include respond-to(handhelds) { width: 100% ;}
+  @include respond-to(medium-screens) { width: 125px; }
+  @include respond-to(wide-screens) { float: none; }
+}
+*/

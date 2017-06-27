@@ -1,0 +1,49 @@
+$screen-small: 600px;
+$screen-large: 768px;
+
+@mixin respond-to($media) {
+  @if $media == medium-screens {
+    @media only screen and (min-width: $screen-small) {
+      @content;
+    }
+  }
+  @else if $media == wide-screens {
+    @media only screen and (min-width: $screen-large) {
+      @content;
+    }
+  }
+}
+
+[class*="col-"]{
+  width: 100%;
+  float: left;
+}
+
+// Calculando porcentaje
+@function col-width($col-number, $col-total){
+  @return ($col-number/$col-total)*100%;
+}
+
+.col-s12{
+  width: 100%; 
+}
+
+.col-m3{
+  @include respond-to(medium-screens) { width: col-width(3,12); }
+}
+
+.col-m6{
+  @include respond-to(medium-screens) { width: col-width(6,12); }
+}
+
+.col-m9{
+  @include respond-to(meddium-screens) { width: col-width(9,12); }
+}
+
+.col-3{
+  @include respond-to(wide-screens) { width: col-width(3,12); }
+}
+
+.col-6{
+  @include respond-to(wide-screens) { width: col-width(6,12); }
+}
